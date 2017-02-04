@@ -1,6 +1,8 @@
 postfixadmin
 ============
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08a3004a7ba447be88d69357549dc394)](https://www.codacy.com/app/Janfred/postfixadmin?utm_source=github.com&utm_medium=referral&utm_content=Janfred/postfixadmin&utm_campaign=badger)
+
 PostfixAdmin - web based administration interface for Postfix mail servers
 
 
