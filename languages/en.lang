@@ -429,7 +429,18 @@ $PALANG['server_address_description'] = 'smtp address of the remote server for r
 $PALANG['server_creation'] = 'Add a server';
 $PALANG['server_edit'] = 'Edit a server';
 $PALANG['server_button'] = 'Add server';
+$PALANG['server_create_error'] = 'Creating server %s failed';
+$PALANG['server_edit_error'] = 'Modifying server %s failed';
+$PALANG['server_store_success'] = 'The Server %s has successfully been added.';
+$PALANG['server_already_exists'] = 'The server already exists';
+$PALANG['server_does_not_exist'] = 'The server %s does not exist.';
+$PALANG['confirm_delete_server'] = 'Do you really want to delete the server %s?';
+$PALANG['delete_server_domain_target'] = 'There are still domains, where this server is the primary one. Change them first';
+$PALANG['server_updated'] = 'The Server %s was updated';
 $PALANG['primarymx'] = 'Primary MX';
+$PALANG['server_postcreate_failed'] = 'The server postcreate script failed, check the error log for details!';
+$PALANG['server_postdel_failed'] = 'The server postdeletion script failed, check the error log for details!';
+$PALANG['server_must_not_be_empty'] = 'The server name must not be empty.';
 
 $PALANG['please_keep_this_as_last_entry'] = ''; # needed for language-check.sh
 /* vim: set expandtab ft=php softtabstop=3 tabstop=3 shiftwidth=3: */
