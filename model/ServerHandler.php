@@ -58,8 +58,8 @@ class ServerHandler extends PFAHandler {
     }
 
     protected function storemore() {
-        if($this->new) {
-            if(!$this->server_postcreation()) {
+        if ($this->new) {
+            if (!$this->server_postcreation()) {
                 $this->errormsg[] = Config::lang('server_postcreate_failed');
             }
         }
@@ -87,10 +87,10 @@ class ServerHandler extends PFAHandler {
         if (0!=$retval) {
             error_log("Running $command yielded return value=$retval, first line of output=$firstline");
             $this->errormsg[] = 'Problems running server postcreation script!';
-            return FALSE;
+            return false;
         }
 
-        return TRUE;
+        return true;
     }
 
     protected function server_postdeletion() {
@@ -111,10 +111,10 @@ class ServerHandler extends PFAHandler {
         $firstline=exec($command,$output,$retval);
         if (0!=$retval) {
             error_log("Running $command yielded return value=$retval, first line of output=$firstline");
-            return FALSE;
+            return false;
         }
 
-        return TRUE;
+        return true;
     }
 
     public function delete() {
