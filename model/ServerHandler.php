@@ -25,7 +25,7 @@ class ServerHandler extends PFAHandler {
            'created'        => pacol(   0,        0, 0, 'ts',   'created',       ''),
            'modified'       => pacol(   0,        0, 0, 'ts',   'last_modified', ''),
            '_can_edit'      => pacol(   0,        0, 1, 'int',  '',              '', 0, array(), 0, 1, (Config::bool('multiple_servers') && $this->is_superadmin) . 'as _can_edit' ),
-           '_can_delete'    => pacol(   0,        0, 1, 'int',  '',              '', 0, array*(, 0, 1, (Config::bool('multiple_servers') && $this->is_superadmin) . 'as _can_delete' ),
+           '_can_delete'    => pacol(   0,        0, 1, 'int',  '',              '', 0, array(), 0, 1, (Config::bool('multiple_servers') && $this->is_superadmin) . 'as _can_delete' ),
         );
     }
 
