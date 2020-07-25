@@ -1963,5 +1963,5 @@ function upgrade_1844_sqlite() {
     ");
 }
 function upgrade_1845() {
-    _db_add_field('domain', 'primarymx', 'VARCHAR(100) {LATIN1} NOT NULL', 'transport');
+    _db_add_field('domain', 'primarymx', "VARCHAR(100) {LATIN1} NOT NULL DEFAULT ''", 'transport');
 }
