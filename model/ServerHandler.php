@@ -8,6 +8,7 @@ class ServerHandler extends PFAHandler {
     protected function validate_new_id() {
         if ($this->id == null || $this->id == "") {
             $this->errormsg[$this->id_field] = Config::lang('server_must_not_be_empty');
+            return false;
         } else {
             return true;
         }
