@@ -249,10 +249,12 @@ $PALANG['pSendmail_result_error'] = 'Unable to send email to %s!';
 $PALANG['pSendmail_result_success'] = 'Email sent to %s.';
 
 $PALANG['pAdminMenu_list_admin'] = 'Admin List';
+$PALANG['pAdminMenu_list_server'] = 'Server List';
 $PALANG['pAdminMenu_list_domain'] = 'Domain List';
 $PALANG['pAdminMenu_list_virtual'] = 'Virtual List';
 $PALANG['pAdminMenu_backup'] = 'Backup';
 $PALANG['pAdminMenu_create_domain_admins'] = 'Domain Admins';
+$PALANG['pAdminMenu_create_server'] = 'New Server';
 $PALANG['pAdminMenu_create_admin'] = 'New Admin';
 $PALANG['pAdminMenu_create_domain'] = 'New Domain';
 
@@ -421,8 +423,6 @@ $PALANG['dateformat_mysql'] = '%Y-%m-%d';   # translators: rearrange to your loc
 $PALANG['password_expiration'] = 'Pass expires';
 $PALANG['password_expiration_desc'] = 'Date when password will expire';
 
-$PALANG['pAdminMenu_list_sever'] = 'Server list';
-$PALANG['pAdminMenu_create_server'] = 'New Server';
 $PALANG['server'] = 'Server';
 $PALANG['smtpaddress'] = 'SMTP-Address';
 $PALANG['server_address_description'] = 'smtp address of the remote server for relaying (e.g. smtp:[10.0.0.5]:25 )';
