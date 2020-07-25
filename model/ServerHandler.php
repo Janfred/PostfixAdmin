@@ -67,7 +67,7 @@ class ServerHandler extends PFAHandler {
     }
 
     protected function server_postcreation() {
-        $script=Config::read('server_postcreation_script');
+        $script=Config::read_string('server_postcreation_script');
 
         if (empty($script)) {
             return true;
@@ -94,7 +94,7 @@ class ServerHandler extends PFAHandler {
     }
 
     protected function server_postdeletion() {
-        $script=Config::read('server_postdeletion_script');
+        $script=Config::read_string('server_postdeletion_script');
 
         if (empty($script)) {
             return true;
@@ -139,7 +139,7 @@ class ServerHandler extends PFAHandler {
         db_delete($this->db_table, $this->id_field, $this->id);
 
         if ( !$this->server_postdeletion() ) {
-            $this->errormsg[] = $PALANG['server_postdel_failed'];
+            $this->errormsg[] = Config::lang('server_postdel_failed');
         }
 
         db_log($this->id, 'delete_server', $this->id);
