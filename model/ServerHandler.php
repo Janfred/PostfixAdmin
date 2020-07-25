@@ -7,7 +7,7 @@ class ServerHandler extends PFAHandler {
 
     protected function validate_new_id() {
         if ($this->id == null || $this->id == "") {
-            $this->errormsg[$this->id_field] = Config::lang('server_must_not_be_empty')
+            $this->errormsg[$this->id_field] = Config::lang('server_must_not_be_empty');
         } else {
             return true;
         }
@@ -67,11 +67,54 @@ class ServerHandler extends PFAHandler {
     }
 
     protected function server_postcreation() {
-        # TODO
+        $script=Config::read('server_postcreation_script');
+
+        if (empty($script)) {
+            return true;
+        }
+
+        if (empty($this->id)) {
+            $this->errormsg[] = 'Empty server parameter in server_postcreation';
+            return false;
+        }
+
+        $cmdarg1=escapeshellarg($this->id);
+        $command= "$script $cmdarg1";
+        $retval=0;
+        $output=array();
+        $firstline='';
+        $firstline=exec($command,$output,$retval);
+        if (0!=$retval) {
+            error_log("Running $command yielded return value=$retval, first line of output=$firstline");
+            $this->errormsg[] = 'Problems running server postcreation script!';
+            return FALSE;
+        }
+
+        return TRUE;
     }
 
     protected function server_postdeletion() {
-        # TODO
+        $script=Config::read('server_postdeletion_script');
+
+        if (empty($script)) {
+            return true;
+        }
+
+        if (empty($this->id)) {
+        }
+
+        $cmdarg1=escapeshellarg($this->id);
+        $command= "$script $cmdarg1";
+        $retval=0;
+        $output=array();
+        $firstline='';
+        $firstline=exec($command,$output,$retval);
+        if (0!=$retval) {
+            error_log("Running $command yielded return value=$retval, first line of output=$firstline");
+            return FALSE;
+        }
+
+        return TRUE;
     }
 
     public function delete() {
