@@ -40,7 +40,7 @@ class DomainHandler extends PFAHandler {
 
         $query_used_domainquota = 'round(coalesce(__total_quota/' . intval(Config::read('quota_multiplier')) . ',0))';
 
-        $server = Config::bool('multiple_servers') && $super;
+        $server = (Config::bool('multiple_servers') && $super) ? 1 : 0;
         if ($server) {
             $server_handler = new ServerHandler();
             $server_handler -> getList('');
