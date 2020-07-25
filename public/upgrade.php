@@ -1938,7 +1938,7 @@ function upgrade_1844_mysql_pgsql() {
     # Add support for multiple servers
     $server = table_by_key('server');
     db_query_parsed("
-        CREATE TABLE {IF NOT EXISTS} $server (
+        CREATE TABLE {IF_NOT_EXISTS} $server (
             server VARCHAR(100) {LATIN1} NOT NULL,
             description VARCHAR(255) {UTF-8} NOT NULL,
             address VARCHAR(100) {LATIN1} NOT NULL,

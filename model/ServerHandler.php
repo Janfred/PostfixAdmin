@@ -51,7 +51,7 @@ class ServerHandler extends PFAHandler {
             'formtitle_edit' => 'server_edit',
             'create_button' => 'server_button',
 
-            'required_role' => 'global-admin'
+            'required_role' => 'global-admin',
             'listview' => 'list.php?table=server',
             'early_init' => 0,
         );
