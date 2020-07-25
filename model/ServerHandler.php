@@ -138,11 +138,11 @@ class ServerHandler extends PFAHandler {
 
         db_delete($this->db_table, $this->id_field, $this->id);
 
-        if( !$this->server_postdeletion() ) {
+        if ( !$this->server_postdeletion() ) {
             $this->errormsg[] = $PALANG['server_postdel_failed'];
         }
 
-        db_log ($this->id, 'delete_server', $this->id);
+        db_log($this->id, 'delete_server', $this->id);
 
         $this->infomsg[] = Config::Lang_f('pDelete_delete_success', $this->id);
         return true;
